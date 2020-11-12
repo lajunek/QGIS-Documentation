@@ -27,6 +27,12 @@ This group contains functions which aggregate values over layers and fields.
 
 .. include:: expression_help/Aggregates.rst
    :start-after: :orphan:
+   :end-before: .. end_relation_aggregate_section
+
+Further reading: :ref:`vector_relations`
+
+.. include:: expression_help/Aggregates.rst
+   :start-after: .. end_relation_aggregate_section
 
 
 .. index:: Array, List data structure
@@ -59,6 +65,30 @@ This group contains functions for manipulating colors.
 
 .. include:: expression_help/Color.rst
    :start-after: :orphan:
+   :end-before: .. end_darker_section
+
+Further reading: :ref:`expression_function_Color_lighter`
+
+.. include:: expression_help/Color.rst
+   :start-after: .. end_darker_section
+   :end-before: .. end_lighter_section
+
+Further reading: :ref:`expression_function_Color_darker`
+
+.. include:: expression_help/Color.rst
+   :start-after: .. end_lighter_section
+   :end-before: .. end_project_color_section
+
+Further reading: :ref:`setting project colors <project_colors>`
+
+.. include:: expression_help/Color.rst
+   :start-after: .. end_project_color_section
+   :end-before: .. end_ramp_color_section
+
+Further reading: :ref:`color-ramp`, :ref:`color_ramp_widget`
+
+.. include:: expression_help/Color.rst
+   :start-after: .. end_ramp_color_section
 
 
 Conditional Functions
@@ -80,7 +110,7 @@ Conversions Functions
 ---------------------
 
 This group contains functions to convert one data type to another
-(e.g., string to integer, integer to string).
+(e.g., string from/to integer, binary from/to string, string to date, ...).
 
 .. contents::
    :local:
@@ -195,9 +225,10 @@ Form Functions
 --------------
 
 This group contains functions that operate exclusively under the attribute form
-context. For example, in field's widgets settings.
+context. For example, in :ref:`field's widgets <vector_attributes_menu>` settings.
 
-.. contents:: :local:
+.. contents::
+   :local:
 
 .. include:: expression_help/Form.rst
    :start-after: :orphan:
@@ -227,6 +258,19 @@ This group contains general assorted functions.
 
 .. include:: expression_help/General.rst
    :start-after: :orphan:
+   :end-before: .. end_layer_property_section
+
+Further reading: :ref:`vector <vectorinformationmenu>`, :ref:`raster <raster_information>`
+and :ref:`mesh <mesh_information>` layer properties
+
+.. include:: expression_help/General.rst
+   :start-after: .. end_layer_property_section
+   :end-before: .. end_var_section
+
+Further reading: List of default :ref:`variables <expression_variables>`
+
+.. include:: expression_help/General.rst
+   :start-after: .. end_var_section
 
 
 .. _geometry_functions:
@@ -243,8 +287,307 @@ This group contains functions that operate on geometry objects
 
 .. include:: expression_help/GeometryGroup.rst
    :start-after: :orphan:
+   :end-before: .. end_boundary_section
+
+Further reading: :ref:`qgisboundary` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_boundary_section
+   :end-before: .. end_bounds_section
+
+Further reading: :ref:`qgisboundingboxes` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: end_bounds_section
+   :end-before: .. end_buffer_section
+
+Further reading: :ref:`qgisbuffer` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_buffer_section
+   :end-before: .. end_buffer_by_m_section
+
+Further reading: :ref:`qgisbufferbym` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_buffer_by_m_section
+   :end-before: .. end_centroid_section
+
+Further reading: :ref:`qgiscentroids` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_centroid_section
+   :end-before: .. end_collect_geometries_section
+
+Further reading: :ref:`qgiscollect` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_collect_geometries_section
+   :end-before: .. end_contains_section
+
+Further reading: :ref:`expression_function_GeometryGroup_overlay_contains`
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_contains_section
+   :end-before: .. end_convex_hull_section
+
+Further reading: :ref:`qgisconvexhull` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_convex_hull_section
+   :end-before: .. end_crosses_section
+
+Further reading: :ref:`expression_function_GeometryGroup_overlay_crosses`
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_crosses_section
+   :end-before: .. end_difference_section
+
+Further reading: :ref:`qgisdifference` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_difference_section
+   :end-before: .. end_disjoint_section
+
+Further reading: :ref:`expression_function_GeometryGroup_overlay_disjoint`
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_disjoint_section
+   :end-before: .. end_end_point_section
+
+Further reading: :ref:`qgisextractspecificvertices` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_end_point_section
+   :end-before: .. end_extend_section
+
+Further reading: :ref:`qgisextendlines` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_extend_section
+   :end-before: .. end_flip_coordinates_section
+
+Further reading: :ref:`qgisswapxy` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_flip_coordinates_section
+   :end-before: .. end_force_rhr_section
+
+Further reading: :ref:`qgisforcerhr` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_force_rhr_section
+   :end-before: .. end_intersection_section
+   
+Further reading: :ref:`qgisintersection` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_intersection_section
+   :end-before: .. end_intersects_section
+
+Further reading: :ref:`expression_function_GeometryGroup_overlay_intersects`
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_intersects_section
+   :end-before: .. end_line_interpolate_point_section
+
+Further reading: :ref:`qgisinterpolatepoint` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_line_interpolate_point_section
+   :end-before: .. end_line_substring_section
+
+Further reading: :ref:`qgislinesubstring` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_line_substring_section
+   :end-before: .. end_minimal_circle_section
+
+Further reading: :ref:`qgisminimumenclosingcircle` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_minimal_circle_section
+   :end-before: .. end_nodes_to_points_section
+
+Further reading: :ref:`qgisextractvertices` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_nodes_to_points_section
+   :end-before: .. end_offset_curve_section
+
+Further reading: :ref:`qgisoffsetline` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_offset_curve_section
+   :end-before: .. end_oriented_bbox_section
+
+Further reading: :ref:`qgisorientedminimumboundingbox` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_oriented_bbox_section
+   :end-before: .. end_overlay_contains_section
+
+Further reading: :ref:`expression_function_GeometryGroup_contains`,
+:ref:`qgisselectbylocation` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_contains_section
+   :end-before: .. end_overlay_crosses_section
+
+Further reading: :ref:`expression_function_GeometryGroup_crosses`,
+:ref:`qgisselectbylocation` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_crosses_section
+   :end-before: .. end_overlay_disjoint_section
+
+Further reading: :ref:`expression_function_GeometryGroup_disjoint`,
+:ref:`qgisselectbylocation` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_disjoint_section
+   :end-before: .. end_overlay_equals_section
+
+Further reading: :ref:`qgisselectbylocation` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_equals_section
+   :end-before: .. end_overlay_intersects_section
+
+Further reading: :ref:`expression_function_GeometryGroup_intersects`,
+:ref:`qgisselectbylocation` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_intersects_section
+   :end-before: .. end_overlay_nearest_section
+
+Further reading: :ref:`qgisjoinbynearest` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_nearest_section
+   :end-before: .. end_overlay_touches_section
+
+Further reading: :ref:`expression_function_GeometryGroup_touches`,
+:ref:`qgisselectbylocation` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_touches_section
+   :end-before: .. end_overlay_within_section
+
+Further reading: :ref:`expression_function_GeometryGroup_within`,
+:ref:`qgisselectbylocation` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_overlay_within_section
+   :end-before: .. end_point_n_section
+
+Further reading: :ref:`qgisextractspecificvertices` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_point_n_section
+   :end-before: .. end_point_on_surface_section
+
+Further reading: :ref:`qgispointonsurface` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_point_on_surface_section
+   :end-before: .. end_pole_of_inaccessibility_section
+
+Further reading: :ref:`qgispoleofinaccessibility` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_pole_of_inaccessibility_section
+   :end-before: .. end_project_section
+
+Further reading: :ref:`qgisprojectpointcartesian` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_project_section
+   :end-before: .. end_reverse_section
+
+Further reading: :ref:`qgisreverselinedirection` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_reverse_section
+   :end-before: .. end_segments_to_lines_section
+
+Further reading: :ref:`qgisexplodelines` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_segments_to_lines_section
+   :end-before: .. end_simplify_section
+
+Further reading: :ref:`qgissimplifygeometries` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_simplify_section
+   :end-before: .. end_simplify_vw_section
+
+Further reading: :ref:`qgissimplifygeometries` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_simplify_vw_section
+   :end-before: .. end_single_sided_buffer_section
+
+Further reading: :ref:`qgissinglesidedbuffer` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_single_sided_buffer_section
+   :end-before: .. end_smooth_section
+
+Further reading: :ref:`qgissmoothgeometry` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_smooth_section
+   :end-before: .. end_start_point_section
+
+Further reading: :ref:`qgisextractspecificvertices` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_start_point_section
+   :end-before: .. end_sym_difference_section
+
+Further reading: :ref:`qgissymmetricaldifference` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_sym_difference_section
+   :end-before: .. end_tapered_buffer_section
+
+Further reading: :ref:`qgistaperedbuffer` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_tapered_buffer_section
+   :end-before: .. end_touches_section
+
+Further reading: :ref:`expression_function_GeometryGroup_overlay_touches`
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_touches_section
+   :end-before: .. end_transform_section
+
+Further reading: :ref:`qgisreprojectlayer` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_transform_section
+   :end-before: .. end_translate_section
+
+Further reading: :ref:`qgistranslategeometry` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_translate_section
+   :end-before: .. end_wedge_buffer_section
+
+Further reading: :ref:`qgiswedgebuffers` algorithm
+
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_wedge_buffer_section
+   :end-before: .. end_within_section
+
+Further reading: :ref:`expression_function_GeometryGroup_overlay_within`
 
 
+.. include:: expression_help/GeometryGroup.rst
+   :start-after: .. end_within_section
 
 Layout Functions
 ----------------
@@ -257,6 +600,12 @@ This group contains functions to manipulate print layout items properties.
 
 .. include:: expression_help/Layout.rst
    :start-after: :orphan:
+   :end-before: .. end_item_variables_section
+
+Further reading: List of default :ref:`variables <expression_variables>`
+
+.. include:: expression_help/Layout.rst
+   :start-after: .. end_item_variables_section
 
 
 Map Layers
@@ -404,7 +753,43 @@ This group contains functions that operate on record identifiers.
 
 .. include:: expression_help/Record_and_Attributes.rst
    :start-after: :orphan:
+   :end-before: .. end_attributes_section
 
+Further reading: :ref:`maps_functions`
+
+.. include:: expression_help/Record_and_Attributes.rst
+   :start-after: .. end_attributes_section
+   :end-before: .. end_get_feature_by_id_section
+
+Further reading: :ref:`expression_function_Record_and_Attributes_$id`
+
+.. include:: expression_help/Record_and_Attributes.rst
+   :start-after: .. end_get_feature_by_id_section
+   :end-before: .. end_represent_value_section
+
+Further reading: :ref:`widget types <edit_widgets>` 
+
+.. include:: expression_help/Record_and_Attributes.rst
+   :start-after: .. end_represent_value_section
+   :end-before: .. end_sqlite_fetch_and_increment_section
+
+Further reading: :ref:`project_data_source_properties`, :ref:`vector_relations`
+
+.. include:: expression_help/Record_and_Attributes.rst
+   :start-after: .. end_sqlite_fetch_and_increment_section
+
+
+.. index:: Relations
+.. _relations_list:
+
+Relations
+---------
+
+This group contains the list of the :ref:`relations <project_relations>`
+available in the current project, with their description. It provides a quick
+access to the relation ID for writing an expression (with e.g. the
+:ref:`relation_aggregate <expression_function_Aggregates_relation_aggregate>`
+function) or customizing a form.
 
 .. _string_functions:
 
@@ -420,37 +805,34 @@ This group contains functions that operate on strings
 
 .. include:: expression_help/String.rst
    :start-after: :orphan:
+   :end-before: .. end_concat_section
 
 **About fields concatenation**
 
-You can concatenate strings or field values using either ``||`` or ``+``
-operators or the ``concat`` function, with some special characteristics:
+You can also concatenate strings or field values using either ``||`` or ``+``
+operators, with some special characteristics:
 
 * The ``+`` operator also means sum up expression, so if you have an integer
   (field or numeric value) operand, this can be error prone and you better use
   the others::
 
-   'My feature''s id is: ' + "gid" => triggers an error as gid is an integer
+   'My feature id is: ' + "gid" => triggers an error as gid returns an integer
 
 * When any of the arguments is a NULL value, either ``||`` or ``+`` will
   return a NULL value. To return the other arguments regardless the NULL value,
   you may want to use the ``concat`` function::
 
-   "country_name" || NULL => NULL
-   concat('My feature''s id is: ', NULL) => My feature's id is
-   concat("firstname", "nickname", "lastname") => Chuck Norris (if empty nickname)
-   "firstname" + "nickname" + "lastname" => NULL (if one field is empty)
-
-* For other cases, do at your convenience::
-
-   'My country is ' + "country_name" + ' (' + "country_code" + ')'
-   'My country is ' || "country_name" || ' (' || "country_code" || ')'
-   concat('My country is ', "country_name", ' (', "country_code", ')')
-   # All the above return: My country is France (FR)
+    'My feature id is: ' + NULL ==> NULL 
+    'My feature id is: ' || NULL => NULL 
+    concat('My feature id is: ', NULL) => My feature's id is 
 
 
-User Expressions |312|
-----------------------
+.. include:: expression_help/String.rst
+   :start-after: .. end_concat_section
+
+
+User Expressions
+----------------
 
 This group contains the expressions saved as
 :ref:`user expressions <user_expressions_functions>`.
@@ -478,9 +860,9 @@ To use these variables in an expression, they should be preceded by the
    :widths: 25, 70
 
    "algorithm_id", "The unique ID of an algorithm"
-   "animation_end_time |314|", "End of the animation's overall temporal time range (as a datetime value)"
-   "animation_interval |314|", "Duration of the animation's overall temporal time range (as an interval value)"
-   "animation_start_time |314|", "Start of the animation's overall temporal time range (as a datetime value)"
+   "animation_end_time", "End of the animation's overall temporal time range (as a datetime value)"
+   "animation_interval", "Duration of the animation's overall temporal time range (as an interval value)"
+   "animation_start_time", "Start of the animation's overall temporal time range (as a datetime value)"
    "atlas_feature", "The current atlas feature (as feature object)"
    "atlas_featureid", "The current atlas feature ID"
    "atlas_featurenumber", "The current atlas feature number in the layout"
@@ -499,15 +881,15 @@ To use these variables in an expression, they should be preceded by the
    form or table row"
    "current_geometry", "The geometry of the feature currently being edited
    in the form or the table row"
-   "current_parent_feature |314|", "represents the feature currently being
+   "current_parent_feature", "represents the feature currently being
    edited in the parent form. Only usable in an embedded form context."
-   "current_parent_geometry |314|", "represents the geometry of the feature currently being
+   "current_parent_geometry", "represents the geometry of the feature currently being
    edited in the parent form. Only usable in an embedded form context."
    "form_mode", "What the form is used for, like AddFeatureMode, SingleEditMode, MultiEditMode,
    SearchMode, AggregateSearchMode or IdentifyMode as string."
-   "frame_duration |314|", "Temporal duration of each animation frame (as an interval value)"
-   "frame_number |314|", "Current frame number during animation playback"
-   "frame_rate |314|", "Number of frames per second during animation playback"
+   "frame_duration", "Temporal duration of each animation frame (as an interval value)"
+   "frame_number", "Current frame number during animation playback"
+   "frame_rate", "Number of frames per second during animation playback"
    "fullextent_maxx", "Maximum x value from full canvas extent (including all layers)"
    "fullextent_maxy", "Maximum y value from full canvas extent (including all layers)"
    "fullextent_minx", "Minimum x value from full canvas extent (including all layers)"
@@ -522,9 +904,9 @@ To use these variables in an expression, they should be preceded by the
    "item_uuid", "The layout item unique ID"
    "layer", "The current layer"
    "layer_id", "The ID of current layer"
-   "layer_ids |314|", "The IDs of all the map layers in the current project as a list"
+   "layer_ids", "The IDs of all the map layers in the current project as a list"
    "layer_name", "The name of current layer"
-   "layers |314|", "All the map layers in the current project as a list"
+   "layers", "All the map layers in the current project as a list"
    "layout_dpi", "The composition resolution (DPI)"
    "layout_name", "The layout name"
    "layout_numpages", "The number of pages in the layout"
@@ -551,7 +933,7 @@ To use these variables in an expression, they should be preceded by the
    reference system of the current map"
    "map_crs_wkt", "The WKT definition of the Coordinate reference
    system of the current map"
-   "map_end_time |314|", "The end of the map's temporal time range
+   "map_end_time", "The end of the map's temporal time range
    (as a datetime value)"
    "map_extent", "The geometry representing the current extent of the map"
    "map_extent_center", "The point feature at the center of the map"
@@ -559,13 +941,13 @@ To use these variables in an expression, they should be preceded by the
    "map_extent_width", "The current width of the map"
    "map_id", "The ID of current map destination. This will be 'canvas'
    for canvas renders, and the item ID for layout map renders"
-   "map_interval |314|", "The duration of the map's temporal time range
+   "map_interval", "The duration of the map's temporal time range
    (as an interval value)"
    "map_layer_ids", "The list of map layer IDs visible in the map"
    "map_layers", "The list of map layers visible in the map"
    "map_rotation", "The current rotation of the map"
    "map_scale", "The current scale of the map"
-   "map_start_time |314|", "The start of the map's temporal time range
+   "map_start_time", "The start of the map's temporal time range
    (as a datetime value)"
    "map_units", "The units of map measurements"
    "model_path", "Full path (including file name) of current model
@@ -625,16 +1007,16 @@ To use these variables in an expression, they should be preceded by the
    "symbol_id", "The Internal ID of the symbol (in the layout legend)"
    "symbol_label", "The label for the symbol (either a user defined
    label or the default autogenerated label - in the layout legend)"
-   "symbol_layer_count |314|", "Total number of symbol layers in the symbol"
-   "symbol_layer_index |314|", "Current symbol layer index"
-   "symbol_marker_column |314|", "Column number for marker (valid for point pattern fills only)."
-   "symbol_marker_row |314|", "Row number for marker (valid for point pattern fills only)."
+   "symbol_layer_count", "Total number of symbol layers in the symbol"
+   "symbol_layer_index", "Current symbol layer index"
+   "symbol_marker_column", "Column number for marker (valid for point pattern fills only)."
+   "symbol_marker_row", "Row number for marker (valid for point pattern fills only)."
    "user_account_name", "The current user's operating system account name"
    "user_full_name", "The current user's operating system user name"
    "value", "The current value"
    "with_variable", "Allows setting a variable for usage within an expression
    and avoid recalculating the same value repeatedly"
-   "zoom_level |314|", "Zoom level of the tile that is being rendered (derived from the current
+   "zoom_level", "Zoom level of the tile that is being rendered (derived from the current
    map scale). Normally in interval [0, 20]."
 
 **Some examples:**
@@ -680,8 +1062,6 @@ This makes it easy to quickly retrieve and reapply previously used expressions.
    please add it also to the substitutions.txt file in the
    source folder.
 
-.. |312| replace:: ``NEW in 3.12``
-.. |314| replace:: ``NEW in 3.14``
 .. |calculateField| image:: /static/common/mActionCalculateField.png
    :width: 1.5em
 .. |expressionSelect| image:: /static/common/mIconExpressionSelect.png

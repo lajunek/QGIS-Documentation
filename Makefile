@@ -11,8 +11,8 @@ SPHINXBUILD     ?= sphinx-build
 SPHINXINTL      ?= sphinx-intl
 SOURCEDIR       = .
 BUILDDIR        = build
-#SITEDIR         = /var/www/html/qgisdocs
-SITEDIR         = qgis2:/var/www/qgisdata/QGIS-Documentation/live/html
+#SITEDIR         = qgis2:/var/www/qgisdata/QGIS-Documentation/live/html
+SITEDIR         = /var/www/qgisdata/QGIS-Documentation/live/html
 VERSION         = testing
 
 
@@ -105,6 +105,11 @@ zip:
 
 site: html zip
 	rsync -az $(BUILDDIR)/html/$(LANG) $(SITEDIR)/;
+
+
+full: springclean html zip
+	make LANG=$(LANG) pdf;
+	
 
 # this will build ALL languages, AND tries to rsync them to the web dir on qgis2
 # to be able to run this you will need a key on the server

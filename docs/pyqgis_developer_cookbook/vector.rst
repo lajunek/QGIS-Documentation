@@ -38,6 +38,7 @@ The code snippets on this page need the following imports if you're outside the 
       QgsVectorFileWriter,
       QgsWkbTypes,
       QgsSpatialIndex,
+      QgsVectorLayerUtils
     )
 
     from qgis.core.additions.edit import edit
@@ -82,6 +83,29 @@ by calling :meth:`fields() <qgis.core.QgsVectorLayer.fields>` on a :class:`QgsVe
     ELEV Real
     NAME String
     USE String
+
+The :meth:`displayField() <qgis.core.QgsVectorLayer.displayField>` and 
+:meth:`mapTipTemplate() <qgis.core.QgsVectorLayer.mapTipTemplate>` methods of
+the :class:`QgsVectorLayer <qgis.core.QgsVectorLayer>` class provide
+information on the field and template used in the :ref:`maptips` tab.
+
+When you load a vector layer, a field is always chosen by QGIS as the 
+``Display Name``, while the ``HTML Map Tip`` is empty by default. With these 
+methods you can easily get both:
+
+.. testcode:: vectors
+
+    vlayer = QgsVectorLayer("testdata/airports.shp", "airports", "ogr")
+    print(vlayer.displayField())
+
+
+.. testoutput:: vectors
+
+    NAME
+
+.. note:: If you change the ``Display Name`` from a field to an expression, you have to
+   use :meth:`displayExpression() <qgis.core.QgsVectorLayer.displayExpression>`
+   instead of :meth:`displayField() <qgis.core.QgsVectorLayer.displayField>`.
 
 .. index:: Iterating features
 
@@ -454,7 +478,7 @@ this functionality also programmatically --- it is just another method for
 vector layer editing that complements the direct usage of data providers. Use
 this option when providing some GUI tools for vector layer editing, since this
 will allow user to decide whether to commit/rollback and allows the usage of
-undo/redo. When changes are commited, all changes from the editing buffer are
+undo/redo. When changes are committed, all changes from the editing buffer are
 saved to data provider.
 
 The methods are similar to the ones we have seen in the provider, but they are
@@ -587,7 +611,7 @@ to be updated because the changes are not automatically propagated.
 
 .. tip:: **Directly save changes using** ``with`` **based command**
 
-    Using ``with edit(layer):`` the changes will be commited automatically
+    Using ``with edit(layer):`` the changes will be committed automatically
     calling :meth:`commitChanges() <qgis.core.QgsVectorLayer.commitChanges>` at the end. If any exception occurs, it will
     :meth:`rollBack() <qgis.core.QgsVectorLayer.rollBack>` all the changes. See :ref:`editing-buffer`.
 
@@ -646,6 +670,40 @@ create them easily. This is what you have to do:
 
     # returns array of IDs of features which intersect the rectangle
     intersect = index.intersects(QgsRectangle(22.5, 15.3, 23.1, 17.2))
+
+
+.. index:: Vector layers; utils
+
+The QgsVectorLayerUtils class
+=============================
+The :class:`QgsVectorLayerUtils <qgis.core.QgsVectorLayerUtils>` class contains
+some very useful methods that you can use with vector layers.
+
+For example the :meth:`createFeature() <qgis.core.QgsVectorLayerUtils.createFeature>`
+method prepares a :class:`QgsFeature <qgis.core.QgsFeature>` to be added to
+a vector layer keeping all the eventual constraints and default values of each
+field:
+
+.. testcode:: vectors
+
+    vlayer = QgsVectorLayer("testdata/airports.shp", "airports", "ogr")
+    feat = QgsVectorLayerUtils.createFeature(vlayer)
+
+
+The :meth:`getValues() <qgis.core.QgsVectorLayerUtils.getValues>` method allows
+you to quickly get the values of a field or expression:
+
+.. testcode:: vectors
+
+    vlayer = QgsVectorLayer("testdata/airports.shp", "airports", "ogr")
+    # select only the first feature to make the output shorter
+    vlayer.selectByIds([1])
+    val = QgsVectorLayerUtils.getValues(vlayer, "NAME", selectedOnly=True)
+    print(val)
+
+.. testoutput:: vectors
+
+    (['AMBLER'], True)
 
 
 .. index:: Vector layers; Creating

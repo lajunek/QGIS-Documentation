@@ -1031,9 +1031,9 @@ area:
 * **BBOX** the geographical area for which the legend should be built
 * **CRS / SRS** the coordinate reference system adopted to define the
   BBOX coordinates
-* **WIDTH / HEIGHT** if set these should match those defined for the
-  GetMap request, to let QGIS Server scale symbols according to the
-  map view image size.
+* **SRCWIDTH / SRCHEIGHT** if set these should match the WIDTH and HEIGHT
+  parameters of the GetMap request, to let QGIS Server scale symbols according
+  to the map view image size.
 
 Content based legend features are based on the `UMN MapServer
 implementation:
@@ -1046,6 +1046,7 @@ implementation:
     :align: center
 
 * **RULE** set it to a given rule name to get only the named rule symbol
+* **WIDTH/HEIGHT** the generated legend image size if the **RULE** parameter is set
 
 
 .. _server_wms_getprojectsettings:
@@ -1061,6 +1062,7 @@ information which is not available in the GetCapabilities output:
 * information about vector attributes and their edit types
 * information about layer order and drawing order
 * list of layers published in WFS
+* show if a group in the layer tree is :ref:`mutually exclusive <group_layers_interact>`
 
 
 Web Feature Service (WFS)
@@ -1982,8 +1984,8 @@ filters all features where attribute ``name`` ends with "value"
 
     http://localhost/qgisserver/wfs3/collection_one/items.json?attribute_one=*value
 
-Feature sorting |316|
----------------------
+Feature sorting
+---------------
 
 It is possible to order the result set by field value using the ``sortby``
 query parameter.
@@ -2133,7 +2135,7 @@ image (map).
 This permits the user to put emphasis or maybe add some comments (labels)
 to some areas, locations etc. that are not in the standard map.
 
-The request is in the format::
+The ``GetMap`` request is in the format::
 
  http://qgisplatform.demo/cgi-bin/qgis_mapserv.fcgi?map=/world.qgs&SERVICE=WMS&VERSION=1.3.0&
  REQUEST=GetMap
@@ -2145,6 +2147,19 @@ The request is in the format::
  &HIGHLIGHT_LABELCOLOR=%23000000
  &HIGHLIGHT_LABELBUFFERCOLOR=%23FFFFFF
  &HIGHLIGHT_LABELBUFFERSIZE=1.5
+ 
+The ``GetPrint`` equivalent is in the format (note that ``mapX:`` parameter is added to tell which map has redlining)::
+ 
+ http://qgisplatform.demo/cgi-bin/qgis_mapserv.fcgi?map=/world.qgs&SERVICE=WMS&VERSION=1.3.0&
+ REQUEST=GetPrint
+ ...
+ &map0:HIGHLIGHT_GEOM=POLYGON((590000 5647000, 590000 6110620, 2500000 6110620, 2500000 5647000, 590000 5647000))
+ &map0:HIGHLIGHT_SYMBOL=<StyledLayerDescriptor><UserStyle><Name>Highlight</Name><FeatureTypeStyle><Rule><Name>Symbol</Name><LineSymbolizer><Stroke><SvgParameter name="stroke">%23ea1173</SvgParameter><SvgParameter name="stroke-opacity">1</SvgParameter><SvgParameter name="stroke-width">1.6</SvgParameter></Stroke></LineSymbolizer></Rule></FeatureTypeStyle></UserStyle></StyledLayerDescriptor>
+ &map0:HIGHLIGHT_LABELSTRING=Write label here
+ &map0:HIGHLIGHT_LABELSIZE=16
+ &map0:HIGHLIGHT_LABELCOLOR=%23000000
+ &map0:HIGHLIGHT_LABELBUFFERCOLOR=%23FFFFFF
+ &map0:HIGHLIGHT_LABELBUFFERSIZE=1.5
 
 Here is the image outputed by the above request in which a polygon and
 a label are drawn on top of the normal map:
@@ -2231,11 +2246,3 @@ Similarly, external layers can be used in GetPrint requests:
    &basemap:layers=orthofoto
    &basemap:styles=default
 
-
-.. Substitutions definitions - AVOID EDITING PAST THIS LINE
-   This will be automatically updated by the find_set_subst.py script.
-   If you need to create a new substitution manually,
-   please add it also to the substitutions.txt file in the
-   source folder.
-
-.. |316| replace:: ``NEW in 3.16``
